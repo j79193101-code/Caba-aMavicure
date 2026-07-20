@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>La Cabaña | Mavicure Ecohotel</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;600;700&amp;family=Manrope:wght@400;600&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-tint": "#4b635b",
+                      "error-container": "#ffdad6",
+                      "background": "#fbf9f6",
+                      "on-surface-variant": "#424845",
+                      "surface": "#fbf9f6",
+                      "on-tertiary-fixed": "#2f1500",
+                      "inverse-surface": "#30312f",
+                      "on-secondary-fixed-variant": "#434842",
+                      "surface-variant": "#e4e2df",
+                      "surface-bright": "#fbf9f6",
+                      "primary-container": "#1a322b",
+                      "outline": "#727975",
+                      "on-primary-fixed": "#072019",
+                      "surface-container-lowest": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "tertiary-container": "#492400",
+                      "tertiary-fixed-dim": "#ffb77d",
+                      "on-error": "#ffffff",
+                      "on-background": "#1b1c1a",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "tertiary-fixed": "#ffdcc3",
+                      "error": "#ba1a1a",
+                      "surface-dim": "#dbdad7",
+                      "inverse-on-surface": "#f2f0ed",
+                      "surface-container": "#efeeeb",
+                      "on-primary-fixed-variant": "#334c44",
+                      "surface-container-highest": "#e4e2df",
+                      "on-primary-container": "#819b91",
+                      "on-primary": "#ffffff",
+                      "secondary": "#5b6059",
+                      "secondary-fixed-dim": "#c3c8bf",
+                      "outline-variant": "#c2c8c4",
+                      "on-secondary-container": "#61665f",
+                      "secondary-fixed": "#dfe4db",
+                      "on-tertiary-fixed-variant": "#6e3900",
+                      "primary": "#041d17",
+                      "inverse-primary": "#b1ccc2",
+                      "tertiary": "#2b1300",
+                      "surface-container-low": "#f5f3f0",
+                      "surface-container-high": "#eae8e5",
+                      "secondary-container": "#dfe4db",
+                      "primary-fixed-dim": "#b1ccc2",
+                      "on-surface": "#1b1c1a",
+                      "primary-fixed": "#cde9de",
+                      "on-tertiary-container": "#df7c0f",
+                      "on-secondary-fixed": "#181d17"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "section-gap": "120px",
+                      "container-max": "1280px",
+                      "unit": "8px",
+                      "margin-mobile": "20px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "headline-md": [
+                              "Epilogue"
+                      ],
+                      "body-lg": [
+                              "Manrope"
+                      ],
+                      "label-caps": [
+                              "Space Mono"
+                      ],
+                      "body-sm": [
+                              "Manrope"
+                      ],
+                      "display-lg-mobile": [
+                              "Epilogue"
+                      ],
+                      "display-lg": [
+                              "Epilogue"
+                      ]
+              },
+              "fontSize": {
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "40px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-lg": [
+                              "64px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 300,
+          'GRAD' 0,
+          'opsz' 24
+        }
+        .material-symbols-outlined[style*="'FILL' 1"] {
+            font-variation-settings:
+            'FILL' 1,
+            'wght' 300,
+            'GRAD' 0,
+            'opsz' 24
+        }
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-surface');
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col">
+<!-- TopNavBar (Shared Component) -->
+<nav class="bg-surface/80 backdrop-blur-md dark:bg-surface-container-lowest/80 font-body-lg text-body-lg docked full-width top-0 sticky z-50 border-b border-outline-variant/30 dark:border-outline-variant/10 flat no shadows flex justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto h-20 transition-all duration-300">
+<a class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed tracking-tight" href="#">
+            Mavicure Ecohotel
+        </a>
+<!-- Desktop Nav Links -->
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-primary dark:text-primary-fixed font-bold border-b-2 border-tertiary-container pb-1 hover:text-tertiary-container transition-colors duration-300" href="#">La Cabaña</a>
+<a class="text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-tertiary-container transition-colors duration-300" href="#habitaciones">Habitaciones</a>
+<a class="text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-tertiary-container transition-colors duration-300" href="#experiencias">Experiencias</a>
+<a class="text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-tertiary-container transition-colors duration-300" href="#sostenibilidad">Sostenibilidad</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-primary text-white font-body-lg text-body-lg px-6 py-2 rounded font-semibold hover:bg-primary-container transition-colors duration-300 hidden md:block">
+                Reservar Ahora
+            </button>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</nav>
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="relative w-full h-[819px] min-h-[600px] flex items-end pb-24">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A breathtaking, cinematic photograph of an elegant eco-lodge cabin nestled in a lush, deep green rainforest overlooking a calm, winding river at dawn. Soft, ethereal morning mist rolls through the jungle canopy. The lighting is moody and natural, highlighting the architectural integration with nature. High-end editorial photography style, emphasizing 'Raw Luxury'." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDnkwzy2-VFBNCQi8W4Wivofu-9hmUa-RReSzEFgyWJI27XMRi4Ik6MuG7MNgVPzbDN_NWdt34r1VHHjgoIq5QpWI553Jog8nOz3cUiS-AwPte_i_CArqZ1Ok1XgntuNvVh9Pbvh6KwX7-rm8uY-j5BzKDe-5mg0co7k4OgqSIqmCHPmgP5653DUOqGQumj7aPWT2dEgGf1lXiduEq6UR41mr6S29sapJHLdMMbmQlYg03XsqY4XfR-AU7S0YC9M-8EbEhyDoxY128')">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent"></div>
+</div>
+<div class="relative w-full max-w-container-max mx-auto px-margin-mobile md:px-gutter z-10">
+<p class="font-label-caps text-label-caps text-surface-variant mb-4 uppercase tracking-widest">Inmersión Profunda</p>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-surface max-w-4xl leading-tight">
+                    Refugio entre la Selva y el Río
+                </h1>
+</div>
+</section>
+<!-- Arquitectura Bioclimática -->
+<section class="py-section-gap w-full max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-5 md:col-start-2">
+<h2 class="font-headline-md text-headline-md text-primary mb-6">Arquitectura Bioclimática</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">
+                        Diseñada para respirar con la selva. La cabaña utiliza principios de diseño pasivo para mantener un confort térmico natural, eliminando la necesidad de aire acondicionado artificial. Los techos altos y la orientación estratégica permiten que las brisas del río Inírida fluyan libremente, creando un santuario fresco y silencioso que respeta el ecosistema circundante.
+                    </p>
+<div class="flex items-center gap-2 text-primary font-label-caps text-label-caps uppercase">
+<span class="material-symbols-outlined">air</span>
+<span>Ventilación Cruzada Natural</span>
+</div>
+</div>
+<div class="md:col-span-5 md:col-start-8 mt-12 md:mt-0 relative">
+<div class="absolute -inset-4 border border-outline-variant/50 rounded-lg pointer-events-none"></div>
+<img class="w-full h-[500px] object-cover rounded shadow-lg shadow-primary-container/10" data-alt="A detailed architectural close-up of a sustainably designed wooden eco-lodge interior. Showing high ceilings with exposed natural timber beams and large open spaces that allow natural light and airflow. Deep jungle greenery is visible through wide, unglazed structural openings. The lighting is soft, natural daylight, conveying a serene and organic atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVHnrTSfsIp9we4GXihotJ7jd94GNz6wpx1JXIqliXAxdUw0cI7qPr4c3ia6KESym8EkV4AE5lKC4XoUW57nGTbm8xojFOxkz45QKWJsVA8MiYDI2pc1273q85UHugCW6uzgePLTaYOswSxI4q4Op98vHTTCECi7-vqB2Dh_Svh0vB1BPppmrvZWI-a_w3ubgWA0vj_gzLyyPqobpZsiL55H6LXC1r_e2f_Ap_tNCV_U1P46cS0IckD02wZsNqgspwBlKGRMmbp_U"/>
+</div>
+</div>
+</section>
+<!-- Nuestras Habitaciones (Bento Grid) -->
+<section class="py-section-gap bg-surface-container-low w-full" id="habitaciones">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="text-center mb-16">
+<h2 class="font-headline-md text-headline-md text-primary mb-4">Nuestras Habitaciones</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Santuarios privados diseñados para el descanso profundo, donde los límites entre el interior y la naturaleza se desvanecen.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-unit md:gap-gutter auto-rows-[300px]">
+<!-- Bento Item 1 (Large) -->
+<div class="md:col-span-2 md:row-span-2 relative group overflow-hidden rounded bg-surface border border-outline-variant/30">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A wide-angle, luxurious view of an eco-hotel bedroom. Features a massive, plush bed with premium white linens draped in an elegant, artisanal mosquito net. Floor-to-ceiling wooden framed windows reveal a dense, vibrant jungle canopy outside. The interior is decorated with subtle, tactile modernism elements and natural textures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4V6dqTTQVm_y--ur0TxKo-VpdixFLbbxcJBVTX0FdkIuib6Ir5eXiqaGwsyN6K1T-R7sVFqqIg-8VHCg_2ROwFn9dmuKV8-ryugeGJOHRHQ0GQp4e4bvr-tFrheqJMAy__Poo-w-6jP1No9L9bp5wdTARZql9oy_Z10dbzd12Wx2FpdmHEq7P0JkoUc5gRMd3vtK6ZskKvljd1jRnakO6W_qala8EWmLRBmH7TNc57cHWuJGUpsfRyguDVwStS1vNq0YttIsrU3g"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<span class="inline-block px-3 py-1 bg-surface/20 backdrop-blur text-surface font-label-caps text-label-caps uppercase rounded mb-3 border border-surface/30">Master Suite</span>
+<h3 class="font-headline-md text-headline-md text-surface mb-2">Vistas Panorámicas</h3>
+<p class="font-body-sm text-body-sm text-surface-variant/90 max-w-md">Despierta con la inmensidad del paisaje del Guainía desde la comodidad de una cama premium.</p>
+</div>
+</div>
+<!-- Bento Item 2 -->
+<div class="relative group overflow-hidden rounded bg-surface border border-outline-variant/30 flex flex-col p-8 justify-between">
+<span class="material-symbols-outlined text-4xl text-primary mb-4">bed</span>
+<div>
+<h3 class="font-body-lg text-body-lg font-semibold text-primary mb-2">Camas Premium</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Ropa de cama de algodón orgánico de 400 hilos para un sueño reparador tras un día de expedición.</p>
+</div>
+</div>
+<!-- Bento Item 3 -->
+<div class="relative group overflow-hidden rounded bg-primary-container border border-outline-variant/30 flex flex-col p-8 justify-between">
+<span class="material-symbols-outlined text-4xl text-tertiary-fixed-dim mb-4" data-weight="fill">deck</span>
+<div>
+<h3 class="font-body-lg text-body-lg font-semibold text-surface mb-2">Terrazas Privadas</h3>
+<p class="font-body-sm text-body-sm text-surface-variant/80">Espacios contemplativos individuales para observar la selva en absoluta privacidad.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Experiencias -->
+<section class="py-section-gap w-full max-w-container-max mx-auto px-margin-mobile md:px-gutter" id="experiencias">
+<div class="max-w-2xl mb-16">
+<p class="font-label-caps text-label-caps text-on-tertiary-container uppercase tracking-widest mb-4">Guainía, Colombia</p>
+<h2 class="font-headline-md text-headline-md text-primary mb-6">Experiencias</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Cada salida está guiada por quienes conocen el territorio de toda la vida. La selva y el río marcan el ritmo; nosotros solo abrimos la puerta.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Experiencia 1: roca y selva -->
+<div class="relative overflow-hidden rounded border border-outline-variant/30 h-[420px] flex flex-col justify-end p-6 bg-gradient-to-br from-secondary via-on-surface to-primary">
+<span class="material-symbols-outlined absolute top-6 left-6 text-surface/60 text-3xl">landscape</span>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-3 py-1 bg-surface/15 backdrop-blur text-surface font-label-caps text-label-caps uppercase rounded border border-surface/30">Moderada</span>
+<span class="px-3 py-1 bg-surface/15 backdrop-blur text-surface font-label-caps text-label-caps uppercase rounded border border-surface/30">4H</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-surface mb-2 leading-tight" style="font-size:26px;">Ascenso a los Cerros de Mavicure</h3>
+<p class="font-body-sm text-body-sm text-surface-variant/80">Trekking al amanecer hasta el mirador de Cerro Pajarito, sobre monolitos de granito de más de 1.200 millones de años.</p>
+</div>
+<!-- Experiencia 2: río y noche -->
+<div class="relative overflow-hidden rounded border border-outline-variant/30 h-[420px] flex flex-col justify-end p-6 bg-gradient-to-br from-primary via-primary-container to-on-background">
+<span class="material-symbols-outlined absolute top-6 left-6 text-surface/60 text-3xl">nights_stay</span>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-3 py-1 bg-surface/15 backdrop-blur text-surface font-label-caps text-label-caps uppercase rounded border border-surface/30">Fácil</span>
+<span class="px-3 py-1 bg-tertiary-container/70 backdrop-blur text-tertiary-fixed-dim font-label-caps text-label-caps uppercase rounded border border-tertiary-fixed-dim/30">Cupos Limitados</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-surface mb-2 leading-tight" style="font-size:26px;">Canoa Nocturna y Estrellas</h3>
+<p class="font-body-sm text-body-sm text-surface-variant/80">Navegación silenciosa por el Inírida bajo uno de los cielos más oscuros de Colombia, con avistamiento de caimanes.</p>
+</div>
+<!-- Experiencia 3: comunidad y tierra -->
+<div class="relative overflow-hidden rounded border border-outline-variant/30 h-[420px] flex flex-col justify-end p-6 bg-gradient-to-br from-tertiary via-tertiary-container to-on-tertiary-container">
+<span class="material-symbols-outlined absolute top-6 left-6 text-surface/60 text-3xl">handshake</span>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-3 py-1 bg-surface/15 backdrop-blur text-surface font-label-caps text-label-caps uppercase rounded border border-surface/30">Fácil</span>
+<span class="px-3 py-1 bg-surface/15 backdrop-blur text-surface font-label-caps text-label-caps uppercase rounded border border-surface/30">Eco-Certificado</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-surface mb-2 leading-tight" style="font-size:26px;">Encuentro con la Comunidad Puinave</h3>
+<p class="font-body-sm text-body-sm text-surface-variant/80">Una tarde junto a artesanas locales, aprendiendo el tejido en fibra de chiqui-chiqui y la elaboración tradicional de casabe.</p>
+</div>
+</div>
+</section>
+
+<!-- Bitácora de Expedición (Expedition Log) -->
+<section class="py-section-gap bg-surface-container-low w-full">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="max-w-2xl mb-16">
+<p class="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-4">Bitácora de Expedición</p>
+<h2 class="font-headline-md text-headline-md text-primary mb-6">Un Día en La Cabaña</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Ningún día es idéntico al anterior, pero este es el pulso que sigue la selva.</p>
+</div>
+<div class="relative pl-8 md:pl-12 max-w-3xl">
+<div class="absolute left-[3px] md:left-[7px] top-2 bottom-2 w-px bg-outline-variant"></div>
+<div class="relative pb-12">
+<div class="absolute -left-8 md:-left-12 top-1.5 w-[7px] h-[7px] rounded-full bg-primary ring-4 ring-surface-container-low"></div>
+<p class="font-label-caps text-label-caps text-primary uppercase mb-2">05:30</p>
+<h3 class="font-headline-md text-[22px] font-semibold text-on-surface mb-2">Café al Amanecer</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">Primer café en la terraza, mientras la niebla se levanta sobre los Cerros de Mavicure.</p>
+</div>
+<div class="relative pb-12">
+<div class="absolute -left-8 md:-left-12 top-1.5 w-[7px] h-[7px] rounded-full bg-primary ring-4 ring-surface-container-low"></div>
+<p class="font-label-caps text-label-caps text-primary uppercase mb-2">07:00</p>
+<h3 class="font-headline-md text-[22px] font-semibold text-on-surface mb-2">Ascenso a Cerro Pajarito</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">Caminata guiada hasta el mirador panorámico sobre el río Inírida.</p>
+</div>
+<div class="relative pb-12">
+<div class="absolute -left-8 md:-left-12 top-1.5 w-[7px] h-[7px] rounded-full bg-primary ring-4 ring-surface-container-low"></div>
+<p class="font-label-caps text-label-caps text-primary uppercase mb-2">12:30</p>
+<h3 class="font-headline-md text-[22px] font-semibold text-on-surface mb-2">Almuerzo Ribereño</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">Pescado fresco del río, preparado con técnicas tradicionales Puinave.</p>
+</div>
+<div class="relative pb-12">
+<div class="absolute -left-8 md:-left-12 top-1.5 w-[7px] h-[7px] rounded-full bg-primary ring-4 ring-surface-container-low"></div>
+<p class="font-label-caps text-label-caps text-primary uppercase mb-2">15:00</p>
+<h3 class="font-headline-md text-[22px] font-semibold text-on-surface mb-2">Baño en el Río</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">Tiempo libre para nadar en aguas cristalinas, justo frente a la cabaña.</p>
+</div>
+<div class="relative pb-12">
+<div class="absolute -left-8 md:-left-12 top-1.5 w-[7px] h-[7px] rounded-full bg-primary ring-4 ring-surface-container-low"></div>
+<p class="font-label-caps text-label-caps text-primary uppercase mb-2">18:15</p>
+<h3 class="font-headline-md text-[22px] font-semibold text-on-surface mb-2">Canoa al Atardecer</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">Navegación silenciosa para presenciar la puesta de sol sobre la selva.</p>
+</div>
+<div class="relative">
+<div class="absolute -left-8 md:-left-12 top-1.5 w-[7px] h-[7px] rounded-full bg-primary ring-4 ring-surface-container-low"></div>
+<p class="font-label-caps text-label-caps text-primary uppercase mb-2">20:30</p>
+<h3 class="font-headline-md text-[22px] font-semibold text-on-surface mb-2">Cena Bajo las Estrellas</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">Cierre del día con cielos despejados, ideales para observación astronómica.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Sostenibilidad -->
+<section class="py-section-gap bg-primary dark:bg-primary-container w-full" id="sostenibilidad">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="max-w-2xl mb-16">
+<p class="font-label-caps text-label-caps text-tertiary-fixed-dim uppercase tracking-widest mb-4">Compromiso</p>
+<h2 class="font-headline-md text-headline-md text-surface mb-6">Sostenibilidad</h2>
+<p class="font-body-lg text-body-lg text-surface-variant/80">No estamos de paso en la selva, vivimos de ella con cuidado. Cada decisión operativa responde primero a una pregunta: ¿qué le deja esto al Guainía?</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<div class="border-t border-surface/20 pt-6">
+<p class="font-headline-md text-headline-md text-tertiary-fixed-dim mb-2">100%</p>
+<p class="font-body-sm text-body-sm text-surface-variant/80">Energía solar para la totalidad de las operaciones del refugio.</p>
+</div>
+<div class="border-t border-surface/20 pt-6">
+<p class="font-headline-md text-headline-md text-tertiary-fixed-dim mb-2">0</p>
+<p class="font-body-sm text-body-sm text-surface-variant/80">Aguas residuales vertidas al río; tratamiento y compostaje in situ.</p>
+</div>
+<div class="border-t border-surface/20 pt-6">
+<p class="font-headline-md text-headline-md text-tertiary-fixed-dim mb-2">12</p>
+<p class="font-body-sm text-body-sm text-surface-variant/80">Familias Puinave y Curripaco vinculadas directamente al refugio.</p>
+</div>
+<div class="border-t border-surface/20 pt-6">
+<p class="font-headline-md text-headline-md text-tertiary-fixed-dim mb-2">3.200 ha</p>
+<p class="font-body-sm text-body-sm text-surface-variant/80">De selva protegida en el corredor de los Cerros de Mavicure.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-primary dark:bg-primary-container text-surface-variant dark:text-on-primary-container font-body-sm text-body-sm full-width flat no shadows Transition-all duration-300 w-full py-section-gap px-margin-mobile md:px-gutter max-w-container-max mx-auto flex flex-col md:flex-row justify-between gap-gutter">
+<div class="flex flex-col gap-6 md:w-1/3">
+<h2 class="font-headline-md text-headline-md text-surface dark:text-on-primary-container font-bold tracking-tight">Mavicure Ecohotel</h2>
+<p>© 2024 Mavicure Ecohotel. Lujo Raw en el corazón del Guainía.</p>
+</div>
+<div class="flex flex-col md:flex-row gap-8 md:gap-16">
+<div class="flex flex-col gap-4">
+<h4 class="font-label-caps text-label-caps text-surface/50 uppercase tracking-widest">Explorar</h4>
+<a class="text-surface-variant/80 hover:text-tertiary-fixed-dim transition-colors" href="#">Guía de Viaje</a>
+<a class="text-surface-variant/80 hover:text-tertiary-fixed-dim transition-colors" href="#">Contacto</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-caps text-label-caps text-surface/50 uppercase tracking-widest">Legal</h4>
+<a class="text-surface-variant/80 hover:text-tertiary-fixed-dim transition-colors" href="#">Política de Sostenibilidad</a>
+<a class="text-surface-variant/80 hover:text-tertiary-fixed-dim transition-colors" href="#">Términos y Condiciones</a>
+</div>
+</div>
+</footer>
+</body></html>
