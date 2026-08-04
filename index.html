@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-
 <html class="scroll-smooth" lang="es"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>La Cabaña | Mavicure Ecohotel</title>
+<title>La Cabaña | Mavicure Ecohotel — Eco-lujo en Guainía, Colombia</title>
+<meta name="description" content="La Cabaña – Mavicure Ecohotel: refugio de eco-lujo en los Cerros de Mavicure, Guainía, Colombia. Arquitectura bioclimática, experiencias guiadas y turismo sostenible junto al río Inírida."/>
+<meta name="theme-color" content="#041d17"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%BF%3C/text%3E%3C/svg%3E"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;600;700&amp;family=Manrope:wght@400;600&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
@@ -166,33 +167,58 @@
             background-color: theme('colors.background');
             color: theme('colors.on-surface');
         }
+        html {
+            scroll-behavior: smooth;
+        }
+        [id] {
+            scroll-margin-top: 96px;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
     </style>
 </head>
 <body class="antialiased min-h-screen flex flex-col">
 <!-- TopNavBar (Shared Component) -->
-<nav class="bg-surface/80 backdrop-blur-md dark:bg-surface-container-lowest/80 font-body-lg text-body-lg docked full-width top-0 sticky z-50 border-b border-outline-variant/30 dark:border-outline-variant/10 flat no shadows flex justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto h-20 transition-all duration-300">
-<a class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed tracking-tight" href="#">
+<nav class="bg-surface/80 backdrop-blur-md dark:bg-surface-container-lowest/80 font-body-lg text-body-lg sticky top-0 z-50 border-b border-outline-variant/30 dark:border-outline-variant/10 flex justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto h-20 transition-all duration-300">
+<a class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed tracking-tight focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-tertiary-container rounded" href="#inicio">
             Mavicure Ecohotel
         </a>
 <!-- Desktop Nav Links -->
 <div class="hidden md:flex items-center space-x-8">
-<a class="text-primary dark:text-primary-fixed font-bold border-b-2 border-tertiary-container pb-1 hover:text-tertiary-container transition-colors duration-300" href="#">La Cabaña</a>
-<a class="text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-tertiary-container transition-colors duration-300" href="#habitaciones">Habitaciones</a>
-<a class="text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-tertiary-container transition-colors duration-300" href="#experiencias">Experiencias</a>
-<a class="text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-tertiary-container transition-colors duration-300" href="#sostenibilidad">Sostenibilidad</a>
+<a class="text-primary dark:text-primary-fixed font-bold border-b-2 border-tertiary-container pb-1 hover:text-tertiary-container transition-colors duration-300 focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-tertiary-container rounded" href="#inicio">La Cabaña</a>
+<a class="text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-tertiary-container transition-colors duration-300 focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-tertiary-container rounded" href="#habitaciones">Habitaciones</a>
+<a class="text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-tertiary-container transition-colors duration-300 focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-tertiary-container rounded" href="#experiencias">Experiencias</a>
+<a class="text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-tertiary-container transition-colors duration-300 focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-tertiary-container rounded" href="#sostenibilidad">Sostenibilidad</a>
 </div>
 <div class="flex items-center gap-4">
-<button class="bg-primary text-white font-body-lg text-body-lg px-6 py-2 rounded font-semibold hover:bg-primary-container transition-colors duration-300 hidden md:block">
+<button id="reserva-btn-desktop" onclick="openReservationModal()" class="bg-primary text-white font-body-lg text-body-lg px-6 py-2 rounded font-semibold hover:bg-primary-container transition-colors duration-300 hidden md:block focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-tertiary-container">
                 Reservar Ahora
             </button>
-<button class="md:hidden text-primary">
-<span class="material-symbols-outlined text-3xl">menu</span>
+<button id="mobile-menu-btn" onclick="toggleMobileMenu()" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú" class="md:hidden text-primary focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-primary rounded">
+<span class="material-symbols-outlined text-3xl" id="mobile-menu-icon">menu</span>
 </button>
 </div>
 </nav>
+<!-- Mobile Nav Panel -->
+<div id="mobile-menu" class="hidden md:hidden bg-surface dark:bg-surface-container-lowest border-b border-outline-variant/30 px-margin-mobile py-6 flex flex-col gap-5 sticky top-20 z-40">
+<a href="#inicio" onclick="closeMobileMenu()" class="text-primary font-semibold">La Cabaña</a>
+<a href="#habitaciones" onclick="closeMobileMenu()" class="text-on-surface-variant">Habitaciones</a>
+<a href="#experiencias" onclick="closeMobileMenu()" class="text-on-surface-variant">Experiencias</a>
+<a href="#sostenibilidad" onclick="closeMobileMenu()" class="text-on-surface-variant">Sostenibilidad</a>
+<button onclick="openReservationModal()" class="bg-primary text-white font-body-lg text-body-lg px-6 py-2 rounded font-semibold text-center">Reservar Ahora</button>
+</div>
 <main class="flex-grow">
 <!-- Hero Section -->
-<section class="relative w-full h-[819px] min-h-[600px] flex items-end pb-24">
+<section class="relative w-full h-[819px] min-h-[600px] flex items-end pb-24" id="inicio">
 <div class="absolute inset-0 bg-cover bg-center" data-alt="A breathtaking, cinematic photograph of an elegant eco-lodge cabin nestled in a lush, deep green rainforest overlooking a calm, winding river at dawn. Soft, ethereal morning mist rolls through the jungle canopy. The lighting is moody and natural, highlighting the architectural integration with nature. High-end editorial photography style, emphasizing 'Raw Luxury'." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDnkwzy2-VFBNCQi8W4Wivofu-9hmUa-RReSzEFgyWJI27XMRi4Ik6MuG7MNgVPzbDN_NWdt34r1VHHjgoIq5QpWI553Jog8nOz3cUiS-AwPte_i_CArqZ1Ok1XgntuNvVh9Pbvh6KwX7-rm8uY-j5BzKDe-5mg0co7k4OgqSIqmCHPmgP5653DUOqGQumj7aPWT2dEgGf1lXiduEq6UR41mr6S29sapJHLdMMbmQlYg03XsqY4XfR-AU7S0YC9M-8EbEhyDoxY128')">
 <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent"></div>
 </div>
@@ -201,6 +227,9 @@
 <h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-surface max-w-4xl leading-tight">
                     Refugio entre la Selva y el Río
                 </h1>
+<button onclick="openReservationModal()" class="mt-8 bg-surface text-primary font-body-lg text-body-lg px-7 py-3 rounded font-semibold hover:bg-tertiary-fixed-dim transition-colors duration-300 focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-tertiary-fixed-dim">
+                    Reservar Ahora
+                </button>
 </div>
 </section>
 <!-- Arquitectura Bioclimática -->
@@ -218,7 +247,7 @@
 </div>
 <div class="md:col-span-5 md:col-start-8 mt-12 md:mt-0 relative">
 <div class="absolute -inset-4 border border-outline-variant/50 rounded-lg pointer-events-none"></div>
-<img class="w-full h-[500px] object-cover rounded shadow-lg shadow-primary-container/10" data-alt="A detailed architectural close-up of a sustainably designed wooden eco-lodge interior. Showing high ceilings with exposed natural timber beams and large open spaces that allow natural light and airflow. Deep jungle greenery is visible through wide, unglazed structural openings. The lighting is soft, natural daylight, conveying a serene and organic atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVHnrTSfsIp9we4GXihotJ7jd94GNz6wpx1JXIqliXAxdUw0cI7qPr4c3ia6KESym8EkV4AE5lKC4XoUW57nGTbm8xojFOxkz45QKWJsVA8MiYDI2pc1273q85UHugCW6uzgePLTaYOswSxI4q4Op98vHTTCECi7-vqB2Dh_Svh0vB1BPppmrvZWI-a_w3ubgWA0vj_gzLyyPqobpZsiL55H6LXC1r_e2f_Ap_tNCV_U1P46cS0IckD02wZsNqgspwBlKGRMmbp_U"/>
+<img class="w-full h-[500px] object-cover rounded shadow-lg shadow-primary-container/10" alt="Interior de madera de la cabaña con techos altos y vistas a la selva" data-alt="A detailed architectural close-up of a sustainably designed wooden eco-lodge interior. Showing high ceilings with exposed natural timber beams and large open spaces that allow natural light and airflow. Deep jungle greenery is visible through wide, unglazed structural openings. The lighting is soft, natural daylight, conveying a serene and organic atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVHnrTSfsIp9we4GXihotJ7jd94GNz6wpx1JXIqliXAxdUw0cI7qPr4c3ia6KESym8EkV4AE5lKC4XoUW57nGTbm8xojFOxkz45QKWJsVA8MiYDI2pc1273q85UHugCW6uzgePLTaYOswSxI4q4Op98vHTTCECi7-vqB2Dh_Svh0vB1BPppmrvZWI-a_w3ubgWA0vj_gzLyyPqobpZsiL55H6LXC1r_e2f_Ap_tNCV_U1P46cS0IckD02wZsNqgspwBlKGRMmbp_U"/>
 </div>
 </div>
 </section>
@@ -232,7 +261,7 @@
 <div class="grid grid-cols-1 md:grid-cols-3 gap-unit md:gap-gutter auto-rows-[300px]">
 <!-- Bento Item 1 (Large) -->
 <div class="md:col-span-2 md:row-span-2 relative group overflow-hidden rounded bg-surface border border-outline-variant/30">
-<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A wide-angle, luxurious view of an eco-hotel bedroom. Features a massive, plush bed with premium white linens draped in an elegant, artisanal mosquito net. Floor-to-ceiling wooden framed windows reveal a dense, vibrant jungle canopy outside. The interior is decorated with subtle, tactile modernism elements and natural textures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4V6dqTTQVm_y--ur0TxKo-VpdixFLbbxcJBVTX0FdkIuib6Ir5eXiqaGwsyN6K1T-R7sVFqqIg-8VHCg_2ROwFn9dmuKV8-ryugeGJOHRHQ0GQp4e4bvr-tFrheqJMAy__Poo-w-6jP1No9L9bp5wdTARZql9oy_Z10dbzd12Wx2FpdmHEq7P0JkoUc5gRMd3vtK6ZskKvljd1jRnakO6W_qala8EWmLRBmH7TNc57cHWuJGUpsfRyguDVwStS1vNq0YttIsrU3g"/>
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Habitación Master Suite con cama amplia y mosquitero, vista panorámica a la selva" data-alt="A wide-angle, luxurious view of an eco-hotel bedroom. Features a massive, plush bed with premium white linens draped in an elegant, artisanal mosquito net. Floor-to-ceiling wooden framed windows reveal a dense, vibrant jungle canopy outside. The interior is decorated with subtle, tactile modernism elements and natural textures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4V6dqTTQVm_y--ur0TxKo-VpdixFLbbxcJBVTX0FdkIuib6Ir5eXiqaGwsyN6K1T-R7sVFqqIg-8VHCg_2ROwFn9dmuKV8-ryugeGJOHRHQ0GQp4e4bvr-tFrheqJMAy__Poo-w-6jP1No9L9bp5wdTARZql9oy_Z10dbzd12Wx2FpdmHEq7P0JkoUc5gRMd3vtK6ZskKvljd1jRnakO6W_qala8EWmLRBmH7TNc57cHWuJGUpsfRyguDVwStS1vNq0YttIsrU3g"/>
 <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent"></div>
 <div class="absolute bottom-0 left-0 p-8 w-full">
 <span class="inline-block px-3 py-1 bg-surface/20 backdrop-blur text-surface font-label-caps text-label-caps uppercase rounded mb-3 border border-surface/30">Master Suite</span>
@@ -381,16 +410,16 @@
 </section>
 </main>
 <!-- Footer (Shared Component) -->
-<footer class="bg-primary dark:bg-primary-container text-surface-variant dark:text-on-primary-container font-body-sm text-body-sm full-width flat no shadows Transition-all duration-300 w-full py-section-gap px-margin-mobile md:px-gutter max-w-container-max mx-auto flex flex-col md:flex-row justify-between gap-gutter">
+<footer class="bg-primary dark:bg-primary-container text-surface-variant dark:text-on-primary-container font-body-sm text-body-sm transition-all duration-300 w-full py-section-gap px-margin-mobile md:px-gutter max-w-container-max mx-auto flex flex-col md:flex-row justify-between gap-gutter">
 <div class="flex flex-col gap-6 md:w-1/3">
 <h2 class="font-headline-md text-headline-md text-surface dark:text-on-primary-container font-bold tracking-tight">Mavicure Ecohotel</h2>
-<p>© 2024 Mavicure Ecohotel. Lujo Raw en el corazón del Guainía.</p>
+<p>© 2026 Mavicure Ecohotel. Lujo Raw en el corazón del Guainía.</p>
 </div>
 <div class="flex flex-col md:flex-row gap-8 md:gap-16">
 <div class="flex flex-col gap-4">
 <h4 class="font-label-caps text-label-caps text-surface/50 uppercase tracking-widest">Explorar</h4>
-<a class="text-surface-variant/80 hover:text-tertiary-fixed-dim transition-colors" href="#">Guía de Viaje</a>
-<a class="text-surface-variant/80 hover:text-tertiary-fixed-dim transition-colors" href="#">Contacto</a>
+<a class="text-surface-variant/80 hover:text-tertiary-fixed-dim transition-colors" href="#experiencias">Guía de Viaje</a>
+<a class="text-surface-variant/80 hover:text-tertiary-fixed-dim transition-colors" href="#" onclick="openReservationModal(); return false;">Contacto</a>
 </div>
 <div class="flex flex-col gap-4">
 <h4 class="font-label-caps text-label-caps text-surface/50 uppercase tracking-widest">Legal</h4>
@@ -399,4 +428,145 @@
 </div>
 </div>
 </footer>
+
+<!-- Modal de Reserva -->
+<div id="reservation-modal" class="hidden fixed inset-0 z-[100] items-center justify-center bg-on-background/60 backdrop-blur-sm px-margin-mobile" role="dialog" aria-modal="true" aria-labelledby="reservation-modal-title" onclick="if(event.target===this){closeReservationModal();}">
+<div class="bg-surface w-full max-w-lg rounded-lg shadow-xl p-8 relative max-h-[90vh] overflow-y-auto">
+<button onclick="closeReservationModal()" aria-label="Cerrar formulario de reserva" class="absolute top-4 right-4 text-on-surface-variant hover:text-primary focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-primary rounded">
+<span class="material-symbols-outlined">close</span>
+</button>
+<h2 class="font-headline-md text-headline-md text-primary mb-2" id="reservation-modal-title">Reservar en La Cabaña</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6">Completa tus datos y te contactaremos por WhatsApp o correo para confirmar disponibilidad.</p>
+
+<form class="flex flex-col gap-4" id="reservation-form" onsubmit="handleReservationSubmit(event)">
+<div>
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase block mb-1" for="res-nombre">Nombre completo</label>
+<input class="w-full border border-outline-variant rounded px-4 py-2 bg-surface-container-lowest focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-primary" id="res-nombre" required="" type="text"/>
+</div>
+<div>
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase block mb-1" for="res-email">Correo electrónico</label>
+<input class="w-full border border-outline-variant rounded px-4 py-2 bg-surface-container-lowest focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-primary" id="res-email" required="" type="email"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase block mb-1" for="res-llegada">Llegada</label>
+<input class="w-full border border-outline-variant rounded px-4 py-2 bg-surface-container-lowest focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-primary" id="res-llegada" required="" type="date"/>
+</div>
+<div>
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase block mb-1" for="res-salida">Salida</label>
+<input class="w-full border border-outline-variant rounded px-4 py-2 bg-surface-container-lowest focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-primary" id="res-salida" required="" type="date"/>
+</div>
+</div>
+<div>
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase block mb-1" for="res-huespedes">Huéspedes</label>
+<input class="w-full border border-outline-variant rounded px-4 py-2 bg-surface-container-lowest focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-primary" id="res-huespedes" min="1" required="" type="number" value="2"/>
+</div>
+<div>
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase block mb-1" for="res-mensaje">Mensaje (opcional)</label>
+<textarea class="w-full border border-outline-variant rounded px-4 py-2 bg-surface-container-lowest focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-primary" id="res-mensaje" rows="3"></textarea>
+</div>
+<button class="bg-primary text-white font-body-lg text-body-lg px-6 py-3 rounded font-semibold hover:bg-primary-container transition-colors duration-300 focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-tertiary-container" type="submit">
+                Enviar solicitud por WhatsApp
+            </button>
+</form>
+
+<div class="hidden flex-col gap-3 items-start" id="res-feedback">
+<p class="font-body-lg text-body-lg text-primary font-semibold">¡Gracias! Abrimos WhatsApp con tu solicitud.</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Si prefieres, también puedes <a class="text-primary underline" href="#" id="res-mailto-link">escribirnos por correo</a>.</p>
+<button class="font-body-sm text-body-sm text-on-surface-variant underline text-left" onclick="resetReservationForm()">Hacer otra solicitud</button>
+</div>
+</div>
+</div>
+
+<script>
+    // ======= CONFIGURACIÓN DE CONTACTO — EDITA ESTOS DOS VALORES ANTES DE PUBLICAR =======
+    const CONFIG = {
+        whatsappNumber: "573000000000", // Número real en formato: código de país + número, sin +, espacios ni guiones
+        email: "reservas@mavicureecohotel.com" // Correo real de reservas
+    };
+    // =======================================================================================
+
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobile-menu');
+        const btn = document.getElementById('mobile-menu-btn');
+        const icon = document.getElementById('mobile-menu-icon');
+        const isHidden = menu.classList.contains('hidden');
+        menu.classList.toggle('hidden');
+        btn.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
+        icon.textContent = isHidden ? 'close' : 'menu';
+    }
+
+    function closeMobileMenu() {
+        const menu = document.getElementById('mobile-menu');
+        if (!menu.classList.contains('hidden')) {
+            menu.classList.add('hidden');
+            document.getElementById('mobile-menu-btn').setAttribute('aria-expanded', 'false');
+            document.getElementById('mobile-menu-icon').textContent = 'menu';
+        }
+    }
+
+    function openReservationModal() {
+        closeMobileMenu();
+        const modal = document.getElementById('reservation-modal');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+        const firstInput = document.getElementById('res-nombre');
+        if (firstInput) firstInput.focus();
+    }
+
+    function closeReservationModal() {
+        const modal = document.getElementById('reservation-modal');
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+            closeReservationModal();
+            closeMobileMenu();
+        }
+    });
+
+    function handleReservationSubmit(event) {
+        event.preventDefault();
+
+        const nombre = document.getElementById('res-nombre').value.trim();
+        const email = document.getElementById('res-email').value.trim();
+        const llegada = document.getElementById('res-llegada').value;
+        const salida = document.getElementById('res-salida').value;
+        const huespedes = document.getElementById('res-huespedes').value;
+        const mensaje = document.getElementById('res-mensaje').value.trim();
+
+        let texto = 'Hola, quiero reservar en La Cabaña – Mavicure Ecohotel.\n';
+        texto += 'Nombre: ' + nombre + '\n';
+        texto += 'Correo: ' + email + '\n';
+        texto += 'Llegada: ' + llegada + '\n';
+        texto += 'Salida: ' + salida + '\n';
+        texto += 'Huéspedes: ' + huespedes + '\n';
+        if (mensaje) texto += 'Mensaje: ' + mensaje + '\n';
+
+        const whatsappUrl = 'https://wa.me/' + CONFIG.whatsappNumber + '?text=' + encodeURIComponent(texto);
+        window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+
+        const mailtoUrl = 'mailto:' + CONFIG.email +
+            '?subject=' + encodeURIComponent('Solicitud de reserva – La Cabaña') +
+            '&body=' + encodeURIComponent(texto);
+        document.getElementById('res-mailto-link').href = mailtoUrl;
+
+        document.getElementById('reservation-form').classList.add('hidden');
+        const feedback = document.getElementById('res-feedback');
+        feedback.classList.remove('hidden');
+        feedback.classList.add('flex');
+    }
+
+    function resetReservationForm() {
+        document.getElementById('reservation-form').reset();
+        document.getElementById('reservation-form').classList.remove('hidden');
+        const feedback = document.getElementById('res-feedback');
+        feedback.classList.add('hidden');
+        feedback.classList.remove('flex');
+    }
+</script>
 </body></html>
